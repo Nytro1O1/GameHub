@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Game Hub</title>
+    <style>
+        /* General Styles */
+        body,
+        html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(to right, #141e30, #243b55);
+            color: #ecf0f1;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: auto;
+            padding: 40px;
+            box-sizing: border-box;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 48px;
+            margin-bottom: 50px;
+            animation: fadeInDown 1s;
+        }
+
+        /* Game Card Styles */
+        .game-card {
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 30px;
+            margin: 20px;
+            display: inline-block;
+            width: 300px;
+            vertical-align: top;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .game-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .game-card::before {
+            content: '';
+            position: absolute;
+            width: 150%;
+            height: 150%;
+            top: -50%;
+            left: -25%;
+            background: radial-gradient(circle at center, transparent 0%, transparent 70%, rgba(255, 255, 255, 0.2) 70%);
+            transform: rotate(45deg);
+            animation: rotateGlow 5s infinite linear;
+        }
+
+        @keyframes rotateGlow {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        .game-thumbnail {
+            font-size: 80px;
+            margin-bottom: 20px;
+        }
+
+        .game-title {
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+
+        .game-description {
+            font-size: 16px;
+            line-height: 1.5;
+            color: #bdc3c7;
+        }
+
+        /* Button Styles */
+        .play-button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #27ae60;
+            color: #ecf0f1;
+            border: none;
+            border-radius: 50px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .play-button:hover {
+            background-color: #2ecc71;
+        }
+
+        /* Animations */
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .game-card {
+                width: calc(100% - 40px);
+                margin: 20px auto;
+            }
+
+            h1 {
+                font-size: 36px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>Welcome to Game Hub</h1>
+
+        <!-- Guessing Game Card -->
+        <div class="game-card" onclick="location.href='GuessingGame.html'">
+            <div class="game-thumbnail">🎯</div>
+            <div class="game-title">Guessing Game</div>
+            <div class="game-description">
+                Try to guess the secret number in as few attempts as possible! Can you beat your own high score?
+            </div>
+            <a href="GuessingGame.html" class="play-button">Play Now</a>
+        </div>
+
+        <!-- Tic-Tac-Toe Game Card -->
+        <div class="game-card" onclick="location.href='TicTacToe.html'">
+            <div class="game-thumbnail">❌⭕</div>
+            <div class="game-title">Tic-Tac-Toe</div>
+            <div class="game-description">
+                Challenge a friend in this classic game of Tic-Tac-Toe. First to align three symbols wins!
+            </div>
+            <a href="TicTacToe.html" class="play-button">Play Now</a>
+        </div>
+
+        <!-- Rock-Paper-Scissors Game Card -->
+        <div class="game-card" onclick="location.href='RockPaperScissors.html'">
+            <div class="game-thumbnail">🪨📄✂️</div>
+            <div class="game-title">Rock-Paper-Scissors</div>
+            <div class="game-description">
+                The ultimate showdown! Choose your weapon and outsmart your opponent in this timeless game.
+            </div>
+            <a href="RockPaperScissors.html" class="play-button">Play Now</a>
+        </div>
+    </div>
+
+</body>
+
+</html>
